@@ -1,4 +1,4 @@
-# 📈 Token Classification Label Error Detection Benchmark 📊
+# 📊 Token Classification Label Error Detection Benchmark
 
 This project is an implementation inspired by the paper ["Detecting Label Errors in Token Classification Data."](https://arxiv.org/abs/2210.03920) The original paper introduced methods for detecting label errors in the [CoNLL2003](https://paperswithcode.com/dataset/conll-2003) dataset with the help of the verified labels version [CoNLL++](https://github.com/ZihanWangKi/CrossWeigh/tree/master/data), designed for Named Entity Recognition tasks. In this implementation, the repository from the paper was forked, and four new methods named `median_quality`, `Exponential Moving Average`, `Culmulative Average of Bottom Scores` and `Exponential Distribution` were added to enhance label error detection. While some of the new methods outperformed existing ones, the strongest method from the original paper remained a challenging benchmark, although earnest attempts were made to surpass it.
 
