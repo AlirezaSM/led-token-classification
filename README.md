@@ -13,28 +13,34 @@ This project is an implementation inspired by the paper ["Detecting Label Errors
 ## Methods
 
 The project includes implementations of various methods for aggregating token quality scores as a sentence quality score:
-- **Median Quality:** 
-$$
-s_i^*=\underset{k}{\operatorname{median}}\left\{s_i^k\right\}
-$$
-
-- **Exponential Moving Average (EMA):** 
+- **Median Quality:**
 
   $$
-  s_i^* = S_i^K, \text{ where } S_i^t = \begin{cases}
-    \check{s}_i^1 & \text{ for } t=1 \\
-    \alpha \cdot \breve{s}_i^t + (1-\alpha) \cdot S_i^{t-1} & \text{ for } t>1
-  \end{cases}$$
+  s_i^*= \text{median}_k \left \lbrace s_i^k \right \rbrace
+  $$
+
+- **Exponential Moving Average (EMA):**
+
+$$
+s_i^* = S_i^K, \text{ where } S_i^t = \begin{cases}
+  \check{s}_i^1 & \text{ for } t=1 \\
+  \alpha \cdot \breve{s}_i^t + (1-\alpha) \cdot S_i^{t-1} & \text{ for } t>1
+\end{cases}
+$$
+
 
 - **Cumulative Average of Bottom Scores (CABS):**
+
 $$
 s_i^* = \frac{1}{J} \sum_{k=1}^J \hat{s}_i^k
 $$
 
 - **Exponential Distribution:**
+
 $$
 s_i^* = \frac{\sum_{k=1}^K s_i^k \cdot \exp(- \lambda s_i^k)}{\sum_{k=1}^K \exp(- \lambda s_i^k)}
 $$
+
 
 
 ## Usage
@@ -42,7 +48,7 @@ Most of the implementation is found in the Jupyter notebook named `token-classif
 
 ## Results
 
-The results of the label error detection methods are presented in the notebook, including `Lift score`, `AUROC` and `AUPRC`. Here is an example of the Lift score of different scoring methods using BERT model on merged dataset.
+The results of the label error detection methods are presented in the notebook, including `Lift score`, `AUROC` and `AUPRC`. Here is an example of the Lift score of different scoring methods using BERT model on the merged dataset.
 
 <p align="center">
     <img src="https://github.com/AlirezaSM/led-token-classification/assets/36541098/dc8cdd30-3acd-4de5-a93a-a1263f1ded51" alt="a_lift" width="700"/>
