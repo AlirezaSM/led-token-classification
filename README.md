@@ -1,12 +1,9 @@
-# Token Classification Label Error Detection Benchmark
-
-## Overview
+# 📈 Token Classification Label Error Detection Benchmark 📊
 
 This project is an implementation inspired by the paper ["Detecting Label Errors in Token Classification Data."](https://arxiv.org/abs/2210.03920) The original paper introduced methods for detecting label errors in the [CoNLL2003](https://paperswithcode.com/dataset/conll-2003) dataset with the help of the verified labels version [CoNLL++](https://github.com/ZihanWangKi/CrossWeigh/tree/master/data), designed for Named Entity Recognition tasks. In this implementation, the repository from the paper was forked, and four new methods named `median_quality`, `Exponential Moving Average`, `Culmulative Average of Bottom Scores` and `Exponential Distribution` were added to enhance label error detection. While some of the new methods outperformed existing ones, the strongest method from the original paper remained a challenging benchmark, although earnest attempts were made to surpass it.
 
 ## Table of Contents
 
-- [Overview](#overview)
 - [Methods](#methods)
 - [Usage](#usage)
 - [Results](#results)
@@ -45,7 +42,11 @@ Most of the implementation is found in the Jupyter notebook named `token-classif
 
 ## Results
 
-The results of the label error detection methods are presented in the notebook, including `Lift score`, `AUROC` and `AUPRC`. A comparative analysis is provided, highlighting the strengths and limitations of each method, with a focus on the efforts to outperform the strongest method introduced in the original paper.
+The results of the label error detection methods are presented in the notebook, including `Lift score`, `AUROC` and `AUPRC`. Here is an example of the Lift score of different scoring methods using BERT model on merged dataset.
+
+<p align="center">
+    <img src="https://github.com/AlirezaSM/led-token-classification/assets/36541098/dc8cdd30-3acd-4de5-a93a-a1263f1ded51" alt="a_lift" width="700"/>
+</p>
 
 ## Dependencies
 
